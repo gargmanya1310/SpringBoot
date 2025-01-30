@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.enterprise.MyWebController;
 import com.example.demo.game.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,6 +24,8 @@ public class DemoApplication {
                 = run(DemoApplication.class, args);
         GameRunner runner=context.getBean(GameRunner.class);
         runner.run();
+        MyWebController controller = context.getBean(MyWebController.class);
+        System.out.println(controller.returnValueFromBusinessService());
 
     }
 
